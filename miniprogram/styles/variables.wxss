@@ -1,0 +1,39 @@
+/* ===========================
+   BudBuddy Design Tokens
+   =========================== */
+
+/* 品牌色 */
+page {
+  --color-primary: #4CAF50;
+  --color-primary-light: #E8F5E9;
+
+  --color-success: #4CAF50;
+  --color-warning: #FFB300;
+  --color-danger: #F44336;
+
+  --color-bg: #F8FAF7;
+  --color-card: #FFFFFF;
+
+  --color-text: #222222;
+  --color-text-secondary: #666666;
+  --color-text-placeholder: #999999;
+
+  --color-border: #EEEEEE;
+
+  /* 圆角 */
+  --radius-sm: 8rpx;
+  --radius-md: 16rpx;
+  --radius-lg: 24rpx;
+
+  /* 间距 */
+  --spacing-xs: 8rpx;
+  --spacing-sm: 16rpx;
+  --spacing-md: 24rpx;
+  --spacing-lg: 32rpx;
+
+  /* 字体 */
+  --font-title: 36rpx;
+  --font-subtitle: 30rpx;
+  --font-body: 28rpx;
+  --font-caption: 24rpx;
+}

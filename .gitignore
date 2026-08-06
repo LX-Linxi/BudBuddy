@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# SQLite
+*.db
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# WeChat DevTools
+miniprogram/node_modules/
+
+# Temporary
+temp/
+
+project.private.config.json
