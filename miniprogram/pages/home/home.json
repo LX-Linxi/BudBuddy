@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar"
+    "baby-card": "/components/baby-card/baby-card"
   }
 }

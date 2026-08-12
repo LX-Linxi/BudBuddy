@@ -1,0 +1,23 @@
+<view class="baby-card">
+
+    <view class="avatar">
+      👶
+    </view>
+  
+    <view class="baby-info">
+  
+      <text class="baby-name">
+        {{baby.nickname}}
+      </text>
+  
+      <text class="baby-age">
+        {{baby.age}}
+      </text>
+  
+      <text class="baby-days">
+        成长第 {{baby.growthDays}} 天
+      </text>
+  
+    </view>
+  
+  </view>
