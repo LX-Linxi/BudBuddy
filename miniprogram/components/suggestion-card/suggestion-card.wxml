@@ -1,0 +1,19 @@
+<view class="suggestion-card">
+
+  <view class="suggestion-header">
+
+    <text class="suggestion-icon">
+      {{suggestion.icon}}
+    </text>
+
+    <text class="suggestion-title">
+      {{suggestion.title}}
+    </text>
+
+  </view>
+
+  <text class="suggestion-content">
+    {{suggestion.content}}
+  </text>
+
+</view>

@@ -1,0 +1,11 @@
+<view class="quick-card">
+
+  <text class="quick-icon">
+    {{entry.icon}}
+  </text>
+
+  <text class="quick-name">
+    {{entry.name}}
+  </text>
+
+</view>

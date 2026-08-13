@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "baby-card": "/components/baby-card/baby-card"
+    "baby-card": "/components/baby-card/baby-card",
+    "suggestion-card": "/components/suggestion-card/suggestion-card",
+    "quick-entry": "/components/quick-entry/quick-entry"
   }
 }

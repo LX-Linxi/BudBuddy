@@ -1,39 +1,43 @@
 <view class="page">
 
 <!-- 宝宝信息卡片 -->
-<baby-card baby="{{baby}}"></baby-card>
+<baby-card baby="{{baby}}" />
+
 
 <!-- 今日成长建议 -->
 <view class="section">
-  <text class="section-title">✨ 今日成长建议</text>
 
-  <view
-    class="suggestion-card"
+  <text class="section-title">
+    ✨ 今日成长建议
+  </text>
+
+  <suggestion-card
     wx:for="{{suggestions}}"
     wx:key="id"
-  >
-    <view class="suggestion-header">
-      <text class="suggestion-icon">{{item.icon}}</text>
-      <text class="suggestion-title">{{item.title}}</text>
-    </view>
-    <text class="suggestion-content">{{item.content}}</text>
-  </view>
+    suggestion="{{item}}"
+  />
+
 </view>
+
 
 <!-- 快捷入口 -->
 <view class="section">
-  <text class="section-title">🚀 快捷入口</text>
+
+  <text class="section-title">
+    🚀 快捷入口
+  </text>
 
   <view class="quick-grid">
+
     <view
-      class="quick-card"
+      class="quick-entry-wrapper"
       wx:for="{{quickEntries}}"
       wx:key="name"
     >
-      <text class="quick-icon">{{item.icon}}</text>
-      <text class="quick-name">{{item.name}}</text>
+      <quick-entry entry="{{item}}" />
     </view>
-  </view>
-</view>
 
-</view> 
+  </view>
+
+</view>
+</view>
