@@ -1,11 +1,13 @@
+const babyService = require('../../services/baby')
+
 Page({
   data: {
     greeting: "早上好",
 
     baby: {
-      nickname: "小芽",
-      age: "8个月16天",
-      growthDays: 259
+      nickname: "",
+      age: "",
+      growthDays: 0
     },
 
     suggestions: [
@@ -61,8 +63,34 @@ Page({
     ]
   },
 
-  handleQuickEntry(e) {
-    const { page, type } = e.currentTarget.dataset
+  onLoad: function () {
+    this.loadBaby()
+  },
+  loadBaby: function () {
+    const baby = babyService.getBaby()
+    const age = babyService.getBabyAge()
+  
+    this.setData({
+      'baby.nickname': baby.nickname,
+      'baby.age': age.months + '个月' + age.days + '天',
+      'baby.growthDays': age.growthDays
+    })
+  },
+
+  updateBabyAge: function () {
+    const age = babyService.calculateAge(
+      this.data.baby.birthday
+    )
+
+    this.setData({
+      'baby.age': age.months + '个月' + age.days + '天',
+      'baby.growthDays': age.growthDays
+    })
+  },
+
+  handleQuickEntry: function (e) {
+    const page = e.currentTarget.dataset.page
+    const type = e.currentTarget.dataset.type
 
     if (!page) {
       wx.showToast({
@@ -79,7 +107,7 @@ Page({
       return
     }
 
-    wx.switchTab({
+    wx.navigateTo({
       url: page
     })
   }

@@ -14,31 +14,43 @@
   <view class="month-selector">
 
     <view
-      class="month-arrow"
+      class="month-arrow {{currentMonth <= minMonth ? 'disabled' : ''}}"
       bindtap="handlePrevMonth"
     >
       ‹
     </view>
-
+  
     <view class="month-current">
-
+  
       <text class="month-number">
         {{currentMonth}}
       </text>
-
+  
       <text class="month-label">
         个月
       </text>
-
+  
+      <text
+        wx:if="{{currentMonth === babyMonth}}"
+        class="current-label"
+      >
+        宝宝当前
+      </text>
+  
     </view>
-
+    <text
+    wx:if="{{guideStatus}}"
+    class="guide-status"
+  >
+    {{guideStatus}}
+  </text>
     <view
-      class="month-arrow"
+      class="month-arrow {{currentMonth >= maxMonth ? 'disabled' : ''}}"
       bindtap="handleNextMonth"
     >
       ›
     </view>
-
+  
   </view>
 
 
