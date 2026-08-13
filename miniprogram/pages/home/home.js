@@ -77,17 +77,6 @@ Page({
     })
   },
 
-  updateBabyAge: function () {
-    const age = babyService.calculateAge(
-      this.data.baby.birthday
-    )
-
-    this.setData({
-      'baby.age': age.months + '个月' + age.days + '天',
-      'baby.growthDays': age.growthDays
-    })
-  },
-
   handleQuickEntry: function (e) {
     const page = e.currentTarget.dataset.page
     const type = e.currentTarget.dataset.type
