@@ -1,1 +1,478 @@
-/* pages/guide/guide.wxss */
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+  
+    padding: 32rpx;
+    padding-bottom: 140rpx;
+  
+    background: var(--color-background);
+  }
+  
+  
+  /* =========================
+     Header
+  ========================= */
+  
+  .header {
+    margin-bottom: 32rpx;
+  }
+  
+  .header-title {
+    display: block;
+  
+    font-size: 48rpx;
+    font-weight: 700;
+  
+    color: var(--color-text);
+  }
+  
+  .header-subtitle {
+    display: block;
+  
+    margin-top: 8rpx;
+  
+    font-size: 26rpx;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     月龄选择器
+  ========================= */
+  
+  .month-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    height: 100rpx;
+    margin-bottom: 24rpx;
+  
+    background: var(--color-card);
+  
+    border-radius: 28rpx;
+  }
+  
+  .month-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100rpx;
+    height: 100%;
+  
+    font-size: 60rpx;
+    font-weight: 300;
+  
+    color: var(--color-primary);
+  }
+  
+  .month-current {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+  
+  .month-number {
+    font-size: 52rpx;
+    font-weight: 700;
+  
+    color: var(--color-text);
+  }
+  
+  .month-label {
+    margin-left: 8rpx;
+  
+    font-size: 28rpx;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     当前阶段
+  ========================= */
+  
+  .stage-card {
+    padding: 32rpx;
+    margin-bottom: 32rpx;
+  
+    background: var(--color-card);
+  
+    border-radius: 28rpx;
+  
+    box-sizing: border-box;
+  }
+  
+  .stage-badge {
+    display: inline-block;
+  
+    margin-bottom: 16rpx;
+  
+    font-size: 26rpx;
+    font-weight: 500;
+  
+    color: var(--color-primary);
+  }
+  
+  .stage-title {
+    display: block;
+  
+    font-size: 38rpx;
+    font-weight: 700;
+  
+    color: var(--color-text);
+  }
+  
+  .stage-description {
+    display: block;
+  
+    margin-top: 16rpx;
+  
+    font-size: 28rpx;
+    line-height: 1.7;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     Section
+  ========================= */
+  
+  .section {
+    margin-bottom: 32rpx;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+  
+    margin-bottom: 20rpx;
+  }
+  
+  .section-icon {
+    margin-right: 12rpx;
+  
+    font-size: 32rpx;
+  }
+  
+  .section-title {
+    font-size: 34rpx;
+    font-weight: 700;
+  
+    color: var(--color-text);
+  }
+  
+  
+  /* =========================
+     成长重点
+  ========================= */
+  
+  .focus-grid {
+    display: grid;
+  
+    grid-template-columns: 1fr 1fr;
+  
+    gap: 20rpx;
+  }
+  
+  .focus-card {
+    padding: 28rpx;
+  
+    box-sizing: border-box;
+  
+    background: var(--color-card);
+  
+    border-radius: 24rpx;
+  }
+  
+  .focus-icon {
+    display: block;
+  
+    margin-bottom: 12rpx;
+  
+    font-size: 42rpx;
+  }
+  
+  .focus-name {
+    display: block;
+  
+    font-size: 30rpx;
+    font-weight: 600;
+  
+    color: var(--color-text);
+  }
+  
+  .focus-description {
+    display: block;
+  
+    margin-top: 10rpx;
+  
+    font-size: 24rpx;
+    line-height: 1.6;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     发育里程碑
+  ========================= */
+  
+  .milestone-list {
+    padding: 12rpx 28rpx;
+  
+    box-sizing: border-box;
+  
+    background: var(--color-card);
+  
+    border-radius: 24rpx;
+  }
+  
+  .milestone-item {
+    display: flex;
+  
+    padding: 24rpx 0;
+  
+    border-bottom: 1rpx solid #eeeeee;
+  }
+  
+  .milestone-item:last-child {
+    border-bottom: none;
+  }
+  
+  .milestone-status {
+    flex-shrink: 0;
+  
+    width: 50rpx;
+  
+    font-size: 34rpx;
+  
+    color: #b8b8b8;
+  }
+  
+  .milestone-status.is-achieved {
+    color: var(--color-primary);
+  }
+  
+  .milestone-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .milestone-title {
+    display: block;
+  
+    font-size: 28rpx;
+    font-weight: 600;
+  
+    color: var(--color-text);
+  }
+  
+  .milestone-description {
+    display: block;
+  
+    margin-top: 8rpx;
+  
+    font-size: 24rpx;
+    line-height: 1.5;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     辅食 / 睡眠
+  ========================= */
+  
+  .section-summary {
+    display: block;
+  
+    margin-bottom: 16rpx;
+  
+    font-size: 26rpx;
+    line-height: 1.6;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  .recommendation-list {
+    padding: 24rpx 28rpx;
+  
+    box-sizing: border-box;
+  
+    background: var(--color-card);
+  
+    border-radius: 24rpx;
+  }
+  
+  .recommendation-item {
+    display: flex;
+    align-items: flex-start;
+  
+    margin-bottom: 16rpx;
+  
+    font-size: 26rpx;
+    line-height: 1.6;
+  
+    color: var(--color-text);
+  }
+  
+  .recommendation-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .recommendation-dot {
+    flex-shrink: 0;
+  
+    margin-right: 12rpx;
+  
+    color: var(--color-primary);
+  }
+  
+  .recommendation-text {
+    flex: 1;
+  }
+  
+  
+  /* =========================
+     亲子活动
+  ========================= */
+  
+  .activity-card {
+    display: flex;
+    align-items: center;
+  
+    padding: 24rpx;
+    margin-bottom: 16rpx;
+  
+    box-sizing: border-box;
+  
+    background: var(--color-card);
+  
+    border-radius: 24rpx;
+  }
+  
+  .activity-card:last-child {
+    margin-bottom: 0;
+  }
+  
+  .activity-icon {
+    flex-shrink: 0;
+  
+    margin-right: 20rpx;
+  
+    font-size: 48rpx;
+  }
+  
+  .activity-content {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .activity-title {
+    display: block;
+  
+    font-size: 30rpx;
+    font-weight: 600;
+  
+    color: var(--color-text);
+  }
+  
+  .activity-description {
+    display: block;
+  
+    margin-top: 8rpx;
+  
+    font-size: 24rpx;
+    line-height: 1.5;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     温馨提示
+  ========================= */
+  
+  .tip-card {
+    padding: 28rpx;
+    margin-bottom: 32rpx;
+  
+    box-sizing: border-box;
+  
+    background: var(--color-card);
+  
+    border-radius: 24rpx;
+  }
+  
+  .tip-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tip-icon {
+    margin-right: 10rpx;
+  
+    font-size: 30rpx;
+  }
+  
+  .tip-title {
+    font-size: 28rpx;
+    font-weight: 600;
+  
+    color: var(--color-text);
+  }
+  
+  .tip-content {
+    display: block;
+  
+    margin-top: 12rpx;
+  
+    font-size: 24rpx;
+    line-height: 1.6;
+  
+    color: var(--color-text-secondary);
+  }
+  
+  
+  /* =========================
+     空状态
+  ========================= */
+  
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    padding: 100rpx 32rpx;
+  
+    box-sizing: border-box;
+  
+    background: var(--color-card);
+  
+    border-radius: 24rpx;
+  }
+  
+  .empty-icon {
+    font-size: 64rpx;
+  }
+  
+  .empty-title {
+    margin-top: 24rpx;
+  
+    font-size: 32rpx;
+    font-weight: 600;
+  
+    color: var(--color-text);
+  }
+  
+  .empty-description {
+    margin-top: 12rpx;
+  
+    font-size: 24rpx;
+  
+    color: var(--color-text-secondary);
+  }

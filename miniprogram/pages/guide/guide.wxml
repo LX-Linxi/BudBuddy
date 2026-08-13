@@ -1,7 +1,346 @@
-<!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    Weixin
+<view class="page">
+
+  <!-- 页面头部 -->
+  <view class="header">
+    <text class="header-title">成长指南</text>
+
+    <text class="header-subtitle">
+      陪宝宝一起成长
+    </text>
   </view>
-</scroll-view>
+
+
+  <!-- 月龄选择器 -->
+  <view class="month-selector">
+
+    <view
+      class="month-arrow"
+      bindtap="handlePrevMonth"
+    >
+      ‹
+    </view>
+
+    <view class="month-current">
+
+      <text class="month-number">
+        {{currentMonth}}
+      </text>
+
+      <text class="month-label">
+        个月
+      </text>
+
+    </view>
+
+    <view
+      class="month-arrow"
+      bindtap="handleNextMonth"
+    >
+      ›
+    </view>
+
+  </view>
+
+
+  <!-- 当前阶段 -->
+  <view
+    wx:if="{{guide}}"
+    class="stage-card"
+  >
+
+    <view class="stage-badge">
+      🌱 {{guide.stage}}
+    </view>
+
+    <text class="stage-title">
+      {{guide.title}}
+    </text>
+
+    <text class="stage-description">
+      {{guide.description}}
+    </text>
+
+  </view>
+
+
+  <!-- 成长重点 -->
+  <view
+    wx:if="{{guide && guide.focus}}"
+    class="section"
+  >
+
+    <view class="section-header">
+
+      <text class="section-title">
+        本月成长重点
+      </text>
+
+    </view>
+
+
+    <view class="focus-grid">
+
+      <view
+        wx:for="{{guide.focus}}"
+        wx:key="id"
+        class="focus-card"
+      >
+
+        <text class="focus-icon">
+          {{item.icon}}
+        </text>
+
+        <text class="focus-name">
+          {{item.name}}
+        </text>
+
+        <text class="focus-description">
+          {{item.description}}
+        </text>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+  <!-- 发育里程碑 -->
+  <view
+    wx:if="{{guide && guide.milestones}}"
+    class="section"
+  >
+
+    <view class="section-header">
+
+      <text class="section-title">
+        发育里程碑
+      </text>
+
+    </view>
+
+
+    <view class="milestone-list">
+
+      <view
+        wx:for="{{guide.milestones}}"
+        wx:key="id"
+        class="milestone-item"
+      >
+
+        <!-- 状态 -->
+        <view
+          class="milestone-status
+            {{item.status === 'achieved' ? 'is-achieved' : ''}}"
+        >
+          {{item.status === 'achieved' ? '✓' : '○'}}
+        </view>
+
+
+        <!-- 内容 -->
+        <view class="milestone-content">
+
+          <text class="milestone-title">
+            {{item.title}}
+          </text>
+
+          <text class="milestone-description">
+            {{item.description}}
+          </text>
+
+        </view>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+  <!-- 辅食 -->
+  <view
+    wx:if="{{guide && guide.feeding}}"
+    class="section"
+  >
+
+    <view class="section-header">
+
+      <text class="section-icon">
+        🥣
+      </text>
+
+      <text class="section-title">
+        {{guide.feeding.title}}
+      </text>
+
+    </view>
+
+
+    <text class="section-summary">
+      {{guide.feeding.summary}}
+    </text>
+
+
+    <view class="recommendation-list">
+
+      <view
+        wx:for="{{guide.feeding.recommendations}}"
+        wx:key="*this"
+        class="recommendation-item"
+      >
+
+        <text class="recommendation-dot">
+          •
+        </text>
+
+        <text class="recommendation-text">
+          {{item}}
+        </text>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+  <!-- 睡眠 -->
+  <view
+    wx:if="{{guide && guide.sleep}}"
+    class="section"
+  >
+
+    <view class="section-header">
+
+      <text class="section-icon">
+        😴
+      </text>
+
+      <text class="section-title">
+        {{guide.sleep.title}}
+      </text>
+
+    </view>
+
+
+    <text class="section-summary">
+      {{guide.sleep.summary}}
+    </text>
+
+
+    <view class="recommendation-list">
+
+      <view
+        wx:for="{{guide.sleep.recommendations}}"
+        wx:key="*this"
+        class="recommendation-item"
+      >
+
+        <text class="recommendation-dot">
+          •
+        </text>
+
+        <text class="recommendation-text">
+          {{item}}
+        </text>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+  <!-- 亲子活动 -->
+  <view
+    wx:if="{{guide && guide.activities}}"
+    class="section"
+  >
+
+    <view class="section-header">
+
+      <text class="section-icon">
+        🧸
+      </text>
+
+      <text class="section-title">
+        亲子活动
+      </text>
+
+    </view>
+
+
+    <view
+      wx:for="{{guide.activities}}"
+      wx:key="id"
+      class="activity-card"
+    >
+
+      <view class="activity-icon">
+        {{item.icon}}
+      </view>
+
+
+      <view class="activity-content">
+
+        <text class="activity-title">
+          {{item.title}}
+        </text>
+
+        <text class="activity-description">
+          {{item.description}}
+        </text>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+  <!-- 温馨提示 -->
+  <view
+    wx:if="{{guide && guide.tips && guide.tips.length}}"
+    class="tip-card"
+  >
+
+    <view class="tip-header">
+
+      <text class="tip-icon">
+        💡
+      </text>
+
+      <text class="tip-title">
+        {{guide.tips[0].title}}
+      </text>
+
+    </view>
+
+    <text class="tip-content">
+      {{guide.tips[0].content}}
+    </text>
+
+  </view>
+
+
+  <!-- 没有数据 -->
+  <view
+    wx:if="{{!guide}}"
+    class="empty-state"
+  >
+
+    <text class="empty-icon">
+      🌱
+    </text>
+
+    <text class="empty-title">
+      暂无该月龄指南
+    </text>
+
+    <text class="empty-description">
+      我们正在准备这个阶段的成长内容
+    </text>
+
+  </view>
+
+</view>

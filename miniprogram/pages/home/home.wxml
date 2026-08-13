@@ -30,9 +30,12 @@
   <view class="quick-grid">
 
     <view
-      class="quick-entry-wrapper"
-      wx:for="{{quickEntries}}"
-      wx:key="name"
+    wx:for="{{quickEntries}}"
+    wx:key="id"
+    class="quick-entry-wrapper"
+    data-page="{{item.page}}"
+    data-type="{{item.type}}"
+    bindtap="handleQuickEntry"
     >
       <quick-entry entry="{{item}}" />
     </view>
